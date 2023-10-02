@@ -1,6 +1,23 @@
 import {Link} from 'react-router-dom'
+import { useState } from 'react'
 
 export const Register = () => {
+
+
+    const [form, setform] = useState({
+        nombre: "",
+        apellido: "",
+        direccion: "",
+        telefono: "",
+        email: "",
+        password: ""
+    })
+
+const handleChange = (e) => {
+        setform({...form,
+            [e.target.name]:e.target.value
+        })
+}
     return (
         <>
              <div className="h-screen flex justify-center items-center">
